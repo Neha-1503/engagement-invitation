@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Games — Jeet &amp; Neha</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Lato:wght@300;400;700&family=Noto+Serif:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="games.css" />
+</head>
+<body>
+
+  <!-- ═══════════════ HEADER ═══════════════ -->
+  <header class="g-header">
+    <a href="index.html" class="g-header__back">&larr; Back to Invitation</a>
+    <h1 class="g-header__title">Fun &amp; Games</h1>
+    <p class="g-header__sub">Pick a game and have fun while you wait for the big day!</p>
+  </header>
+
+  <!-- ═══════════════ GAME SELECTOR ═══════════════ -->
+  <section class="g-selector" id="game-selector">
+<div class="g-card" data-game="memory">
+      <span class="g-card__icon">🃏</span>
+      <h2 class="g-card__name">Memory Match</h2>
+      <p class="g-card__desc">Flip cards and match engagement-themed pairs!</p>
+    </div>
+    <div class="g-card" data-game="maze">
+      <span class="g-card__icon">🌹</span>
+      <h2 class="g-card__name">Love Maze</h2>
+      <p class="g-card__desc">Guide the heart through the maze to find the ring!</p>
+    </div>
+  </section>
+
+  <!-- ═══════════════ GAME: MEMORY MATCH ═══════════════ -->
+  <section class="g-arena" id="game-memory" hidden>
+    <div class="g-arena__top">
+      <button class="g-back-btn" data-back>&larr; Games</button>
+      <h2 class="g-arena__title">Memory Match</h2>
+      <div class="g-arena__stats">
+        <span>Moves: <strong id="mem-moves">0</strong></span>
+        <span>Pairs: <strong id="mem-pairs">0</strong>/8</span>
+      </div>
+    </div>
+    <p class="g-arena__desc">Flip the cards and match all the engagement-themed pairs!</p>
+    <div class="mem-grid" id="mem-grid"></div>
+  </section>
+
+  <!-- ═══════════════ GAME: LOVE MAZE ═══════════════ -->
+  <section class="g-arena" id="game-maze" hidden>
+    <div class="g-arena__top">
+      <button class="g-back-btn" data-back>&larr; Games</button>
+      <h2 class="g-arena__title">Love Maze</h2>
+      <div class="g-arena__stats">
+        <span>Moves: <strong id="maze-moves">0</strong></span>
+      </div>
+    </div>
+    <p class="g-arena__desc">Guide the heart through the maze to find the ring!</p>
+    <p class="g-arena__hint maze-hint-desktop">Use arrow keys to move</p>
+    <p class="g-arena__hint maze-hint-mobile">Swipe or use buttons to move</p>
+    <canvas id="maze-canvas"></canvas>
+    <div class="maze-controls" id="maze-controls">
+      <button class="maze-btn" data-dir="up">&#9650;</button>
+      <div class="maze-controls__row">
+        <button class="maze-btn" data-dir="left">&#9664;</button>
+        <button class="maze-btn" data-dir="down">&#9660;</button>
+        <button class="maze-btn" data-dir="right">&#9654;</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══════════════ WIN OVERLAY ═══════════════ -->
+  <div class="g-win" id="win-overlay" hidden>
+    <div class="g-win__box">
+      <span class="g-win__emoji">🎉</span>
+      <h2 class="g-win__title" id="win-title">You did it!</h2>
+      <p class="g-win__msg" id="win-msg"></p>
+      <button class="g-win__btn" id="win-replay">Play Again</button>
+      <button class="g-win__btn g-win__btn--outline" id="win-back">Other Games</button>
+    </div>
+  </div>
+
+  <script src="games.js"></script>
+</body>
+</html>

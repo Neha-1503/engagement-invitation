@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeet &amp; Neha — We're Getting Engaged!</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Luxurious+Script&family=Lato:wght@300;400;700&family=Noto+Serif:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ═══════════════════════════════ HERO SECTION ═══════════════════════════════ -->
+  <section class="hero">
+
+    <!-- Floral corners -->
+    <img src="assets/floral-top-left.png"    class="floral floral--tl"      alt="" aria-hidden="true" />
+    <img src="assets/floral-bottom-left.png" class="floral floral--hero-bl" alt="" aria-hidden="true" />
+    <img src="assets/floral-bottom-right.png" class="floral floral--hero-br" alt="" aria-hidden="true" />
+
+    <div class="hero__content">
+      <p class="sanskrit">|| श्री गणेशाय नमः ||</p>
+
+      <!-- Rings icon -->
+      <img src="assets/rings.png" class="rings-icon" alt="engagement rings" />
+
+      <h1 class="names">Jeet &amp; Neha</h1>
+      <p class="tagline">We're getting engaged!</p>
+
+      <!-- Decorative divider -->
+      <div class="divider divider--leaf" aria-hidden="true">
+        <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="10" cy="30" r="4" fill="currentColor"/>
+          <circle cx="390" cy="30" r="4" fill="currentColor"/>
+          <circle cx="200" cy="30" r="4" fill="currentColor"/>
+          <line x1="14" y1="30" x2="120" y2="30" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="280" y1="30" x2="386" y2="30" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="168" y1="30" x2="196" y2="30" stroke="currentColor" stroke-width="1.5"/>
+          <line x1="204" y1="30" x2="232" y2="30" stroke="currentColor" stroke-width="1.5"/>
+          <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M120,30 Q140,30 168,30"/>
+            <path d="M125,30 Q130,38 140,42 Q135,34 132,30"/>
+            <path d="M128,30 Q133,22 143,18 Q138,26 135,30"/>
+            <path d="M140,30 Q144,36 152,39 Q148,33 145,30"/>
+            <path d="M142,30 Q146,24 154,21 Q150,27 148,30"/>
+            <path d="M152,30 Q155,34 161,36 Q158,32 156,30"/>
+            <path d="M154,30 Q157,26 163,24 Q160,28 158,30"/>
+            <path d="M162,30 Q165,33 168,30"/>
+            <path d="M162,30 Q165,27 168,30"/>
+          </g>
+          <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M232,30 Q260,30 280,30"/>
+            <path d="M275,30 Q270,38 260,42 Q265,34 268,30"/>
+            <path d="M272,30 Q267,22 257,18 Q262,26 265,30"/>
+            <path d="M260,30 Q256,36 248,39 Q252,33 255,30"/>
+            <path d="M258,30 Q254,24 246,21 Q250,27 252,30"/>
+            <path d="M248,30 Q245,34 239,36 Q242,32 244,30"/>
+            <path d="M246,30 Q243,26 237,24 Q240,28 242,30"/>
+            <path d="M238,30 Q235,33 232,30"/>
+            <path d="M238,30 Q235,27 232,30"/>
+          </g>
+        </svg>
+      </div>
+
+      <p class="event-date">3rd May, 2026 &nbsp;|&nbsp; 10:00 AM</p>
+
+      <a
+        class="venue-btn"
+               href="https://maps.google.com/?q=Sterling+Banquet+Delta+Vrindavan+MIDC+Rd+Mira+Road+East+Thane+401107"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        CLICK TO GO TO VENUE
+        <svg class="pin-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5z" fill="currentColor"/>
+        </svg>
+      </a>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ COUNTDOWN SECTION ═══════════════════════════════ -->
+  <section class="countdown">
+
+
+    <!-- Swan icon -->
+    <img src="assets/swans.png" class="swans"/>
+
+    <div class="countdown__timer" id="countdown">
+      <div class="countdown__unit">
+        <span class="countdown__num" id="days">--</span>
+        <span class="countdown__label">Days</span>
+      </div>
+      <span class="countdown__sep">:</span>
+      <div class="countdown__unit">
+        <span class="countdown__num" id="hours">--</span>
+        <span class="countdown__label">Hours</span>
+      </div>
+      <span class="countdown__sep">:</span>
+      <div class="countdown__unit">
+        <span class="countdown__num" id="mins">--</span>
+        <span class="countdown__label">mins</span>
+      </div>
+    </div>
+
+    <p class="countdown__done" id="countdown-done" hidden>Today is the day! 🎉</p>
+  </section>
+
+  <!-- ═══════════════════════════════ DETAILS SECTION ═══════════════════════════════ -->
+  <section class="details">
+
+    <h2 class="special-day">Our special day!</h2>
+
+    <div class="divider divider--leaf" aria-hidden="true">
+      <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="10" cy="30" r="4" fill="currentColor"/>
+        <circle cx="390" cy="30" r="4" fill="currentColor"/>
+        <circle cx="200" cy="30" r="4" fill="currentColor"/>
+        <line x1="14" y1="30" x2="120" y2="30" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="280" y1="30" x2="386" y2="30" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="168" y1="30" x2="196" y2="30" stroke="currentColor" stroke-width="1.5"/>
+        <line x1="204" y1="30" x2="232" y2="30" stroke="currentColor" stroke-width="1.5"/>
+        <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M120,30 Q140,30 168,30"/>
+          <path d="M125,30 Q130,38 140,42 Q135,34 132,30"/>
+          <path d="M128,30 Q133,22 143,18 Q138,26 135,30"/>
+          <path d="M140,30 Q144,36 152,39 Q148,33 145,30"/>
+          <path d="M142,30 Q146,24 154,21 Q150,27 148,30"/>
+          <path d="M152,30 Q155,34 161,36 Q158,32 156,30"/>
+          <path d="M154,30 Q157,26 163,24 Q160,28 158,30"/>
+          <path d="M162,30 Q165,33 168,30"/>
+          <path d="M162,30 Q165,27 168,30"/>
+        </g>
+        <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M232,30 Q260,30 280,30"/>
+          <path d="M275,30 Q270,38 260,42 Q265,34 268,30"/>
+          <path d="M272,30 Q267,22 257,18 Q262,26 265,30"/>
+          <path d="M260,30 Q256,36 248,39 Q252,33 255,30"/>
+          <path d="M258,30 Q254,24 246,21 Q250,27 252,30"/>
+          <path d="M248,30 Q245,34 239,36 Q242,32 244,30"/>
+          <path d="M246,30 Q243,26 237,24 Q240,28 242,30"/>
+          <path d="M238,30 Q235,33 232,30"/>
+          <path d="M238,30 Q235,27 232,30"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="details__row">
+
+      <div class="detail-block">
+        <p class="detail-label">DATE:</p>
+        <p class="detail-value">3rd May, 2026 | 10:00 AM</p>
+      </div>
+
+      <div class="detail-block">
+        <p class="detail-label">VENUE:</p>
+        <p class="detail-value venue-name">Sterling Banquet</p>
+        <p class="detail-value venue-address">
+          Ground Floor, Delta Vrindavan, MIDC Rd, near KFC, opp.
+          MBMC Water Tank, Chs, Mahajan Wadi, Mira Road East,
+          Thane – 401107
+        </p>
+        <p class="detail-value valet">(VALET PARKING AVAILABLE)</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ GAMES CTA ═══════════════════════════════ -->
+  <section class="games-cta">
+    <p class="games-cta__text">While you wait for the big day...</p>
+    <h2 class="games-cta__heading">Want to play some games?</h2>
+    <a class="games-cta__btn" href="games.html">LET'S PLAY</a>
+  </section>
+
+  <!-- ═══════════════════════════════ FOOTER ═══════════════════════════════ -->
+  <footer class="footer">
+    <p>Designed from scratch &amp; coded with love by Er.Neha &amp; Er.Jeet</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

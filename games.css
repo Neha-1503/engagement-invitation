@@ -1,0 +1,368 @@
+/* ─── Reset & Base ──────────────────────────────────────────── */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  font-family: 'Lato', sans-serif;
+  color: #2c2c2c;
+  background: #fff;
+  min-height: 100vh;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   HEADER
+══════════════════════════════════════════════════════════════ */
+.g-header {
+  text-align: center;
+  padding: 40px 24px 32px;
+  background: #8fa98c;
+  color: #fff;
+}
+
+.g-header__back {
+  display: inline-block;
+  font-size: 0.85rem;
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  margin-bottom: 12px;
+  letter-spacing: 0.05em;
+  transition: color 0.2s;
+}
+.g-header__back:hover { color: #fff; }
+
+.g-header__title {
+  font-family: 'Ephesis', cursive;
+  font-size: clamp(2.8rem, 10vw, 4.5rem);
+  font-weight: 400;
+  line-height: 1.1;
+  margin-bottom: 8px;
+}
+
+.g-header__sub {
+  font-size: 0.95rem;
+  font-weight: 300;
+  opacity: 0.9;
+  letter-spacing: 0.04em;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   GAME SELECTOR
+══════════════════════════════════════════════════════════════ */
+.g-selector {
+  display: flex;
+  justify-content: center;
+  gap: 28px;
+  padding: 48px 24px;
+  flex-wrap: wrap;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.g-card {
+  background: #fff;
+  border: 1.5px solid #e0d6db;
+  border-radius: 12px;
+  padding: 32px 24px;
+  width: 240px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
+}
+.g-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  border-color: #887180;
+}
+
+.g-card__icon {
+  font-size: 2.8rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.g-card__name {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #887180;
+  margin-bottom: 8px;
+  letter-spacing: 0.04em;
+}
+
+.g-card__desc {
+  font-size: 0.85rem;
+  font-weight: 300;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   GAME ARENA (shared)
+══════════════════════════════════════════════════════════════ */
+.g-arena {
+  max-width: 640px;
+  margin: 0 auto;
+  padding: 32px 20px 48px;
+}
+
+.g-arena__top {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+
+.g-back-btn {
+  background: none;
+  border: 1px solid #bbb;
+  padding: 6px 14px;
+  font-size: 0.8rem;
+  font-family: 'Lato', sans-serif;
+  color: #555;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background 0.2s;
+}
+.g-back-btn:hover { background: #f0f0f0; }
+
+.g-arena__title {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #887180;
+  flex: 1;
+}
+
+.g-arena__stats {
+  display: flex;
+  gap: 16px;
+  font-size: 0.88rem;
+  color: #555;
+}
+.g-arena__stats strong {
+  color: #887180;
+  font-weight: 700;
+}
+
+.g-arena__desc {
+  font-size: 0.92rem;
+  color: #555;
+  text-align: center;
+  margin-bottom: 16px;
+  font-weight: 300;
+  letter-spacing: 0.03em;
+}
+
+.g-arena__hint {
+  font-size: 0.85rem;
+  color: #888;
+  margin-bottom: 16px;
+  text-align: center;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   GAME 2: MEMORY MATCH
+══════════════════════════════════════════════════════════════ */
+.mem-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.mem-card {
+  aspect-ratio: 1;
+  perspective: 600px;
+  cursor: pointer;
+}
+
+.mem-card__inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.4s;
+  transform-style: preserve-3d;
+}
+
+.mem-card.flipped .mem-card__inner {
+  transform: rotateY(180deg);
+}
+
+.mem-card__front,
+.mem-card__back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mem-card__front {
+  background: linear-gradient(135deg, #8fa98c, #7b9e78);
+  color: #fff;
+  font-size: 1.6rem;
+}
+
+.mem-card__front::after {
+  content: '?';
+  font-family: 'Lato', sans-serif;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.mem-card__back {
+  background: #fff;
+  border: 1.5px solid #e0d6db;
+  transform: rotateY(180deg);
+  font-size: 2.2rem;
+}
+
+.mem-card.matched .mem-card__back {
+  background: #f0f8ee;
+  border-color: #8fa98c;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   GAME 3: LOVE MAZE
+══════════════════════════════════════════════════════════════ */
+#maze-canvas {
+  display: block;
+  margin: 0 auto;
+  border: 1.5px solid #e0d6db;
+  border-radius: 8px;
+  background: #fff;
+  max-width: 100%;
+  touch-action: none;
+}
+
+.maze-controls {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  margin-top: 16px;
+}
+
+.maze-controls__row {
+  display: flex;
+  gap: 4px;
+}
+
+.maze-btn {
+  width: 52px;
+  height: 52px;
+  border: 1.5px solid #e0d6db;
+  border-radius: 8px;
+  background: #fff;
+  font-size: 1.2rem;
+  color: #887180;
+  cursor: pointer;
+  transition: background 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.maze-btn:hover,
+.maze-btn:active { background: #f8f5f2; }
+
+.maze-hint-mobile { display: none; }
+
+/* ═══════════════════════════════════════════════════════════════
+   WIN OVERLAY
+══════════════════════════════════════════════════════════════ */
+.g-win {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  padding: 24px;
+  display: none;
+}
+
+.g-win.visible {
+  display: flex;
+}
+
+.g-win__box {
+  background: #fff;
+  border-radius: 16px;
+  padding: 40px 32px;
+  text-align: center;
+  max-width: 360px;
+  width: 100%;
+  animation: winPop 0.35s ease-out;
+}
+
+@keyframes winPop {
+  0% { transform: scale(0.8); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+.g-win__emoji {
+  font-size: 3rem;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.g-win__title {
+  font-family: 'Lato', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #887180;
+  margin-bottom: 8px;
+}
+
+.g-win__msg {
+  font-size: 0.92rem;
+  color: #555;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+.g-win__btn {
+  display: inline-block;
+  padding: 12px 28px;
+  margin: 0 6px;
+  border: 1.5px solid #8fa98c;
+  background: #8fa98c;
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.2s;
+}
+.g-win__btn:hover { background: #7b9e78; }
+
+.g-win__btn--outline {
+  background: #fff;
+  color: #8fa98c;
+}
+.g-win__btn--outline:hover {
+  background: #f0f8ee;
+}
+
+/* ═══════════════════════════════════════════════════════════════
+   MOBILE RESPONSIVE
+══════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .g-selector { padding: 32px 16px; gap: 16px; }
+  .g-card { width: 100%; max-width: 320px; padding: 24px 20px; }
+
+  .g-arena { padding: 24px 12px 40px; }
+  .g-arena__top { gap: 10px; }
+
+  .mem-grid { gap: 8px; max-width: 320px; }
+
+  .maze-controls { display: flex; margin-bottom: 32px; }
+  .maze-hint-desktop { display: none; }
+  .maze-hint-mobile { display: block; }
+}
