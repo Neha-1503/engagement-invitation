@@ -1,12 +1,16 @@
 /* ─── Reset & Base ──────────────────────────────────────────── */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  color-scheme: only light;
+  background-color: #fff;
+}
 
 body {
   font-family: 'Lato', sans-serif;
   color: #2c2c2c;
-  background: #fff;
+  background-color: #fff;
   overflow-x: hidden;
 }
 
@@ -35,6 +39,10 @@ img { display: block; max-width: 100%; }
 /* ═══════════════════════════════════════════════════════════════
    HERO SECTION
 ══════════════════════════════════════════════════════════════ */
+.hero-bg {
+  background-color: #fff;
+}
+
 .hero {
   position: relative;
   background: #fff;
