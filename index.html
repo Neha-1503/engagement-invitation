@@ -7,10 +7,13 @@
   <title>Jeet &amp; Neha — We're Getting Engaged!</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Luxurious+Script&family=Lato:wght@300;400;700&family=Noto+Serif:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Ephesis&family=Luxurious+Script&family=Lato:wght@300;400;700&family=Noto+Serif:wght@300;400;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
+<audio id="bg-audio" loop>
+  <source src="assets/song.mp3" type="audio/mpeg">
+</audio>
 
   <!-- ═══════════════════════════════ HERO SECTION ═══════════════════════════════ -->
   <div class="hero-bg">
@@ -32,37 +35,7 @@
 
       <!-- Decorative divider -->
       <div class="divider divider--leaf" aria-hidden="true">
-        <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="10" cy="30" r="4" fill="currentColor"/>
-          <circle cx="390" cy="30" r="4" fill="currentColor"/>
-          <circle cx="200" cy="30" r="4" fill="currentColor"/>
-          <line x1="14" y1="30" x2="120" y2="30" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="280" y1="30" x2="386" y2="30" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="168" y1="30" x2="196" y2="30" stroke="currentColor" stroke-width="1.5"/>
-          <line x1="204" y1="30" x2="232" y2="30" stroke="currentColor" stroke-width="1.5"/>
-          <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M120,30 Q140,30 168,30"/>
-            <path d="M125,30 Q130,38 140,42 Q135,34 132,30"/>
-            <path d="M128,30 Q133,22 143,18 Q138,26 135,30"/>
-            <path d="M140,30 Q144,36 152,39 Q148,33 145,30"/>
-            <path d="M142,30 Q146,24 154,21 Q150,27 148,30"/>
-            <path d="M152,30 Q155,34 161,36 Q158,32 156,30"/>
-            <path d="M154,30 Q157,26 163,24 Q160,28 158,30"/>
-            <path d="M162,30 Q165,33 168,30"/>
-            <path d="M162,30 Q165,27 168,30"/>
-          </g>
-          <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M232,30 Q260,30 280,30"/>
-            <path d="M275,30 Q270,38 260,42 Q265,34 268,30"/>
-            <path d="M272,30 Q267,22 257,18 Q262,26 265,30"/>
-            <path d="M260,30 Q256,36 248,39 Q252,33 255,30"/>
-            <path d="M258,30 Q254,24 246,21 Q250,27 252,30"/>
-            <path d="M248,30 Q245,34 239,36 Q242,32 244,30"/>
-            <path d="M246,30 Q243,26 237,24 Q240,28 242,30"/>
-            <path d="M238,30 Q235,33 232,30"/>
-            <path d="M238,30 Q235,27 232,30"/>
-          </g>
-        </svg>
+        <img src="assets/divider.png" alt="">
       </div>
 
       <p class="event-date">3rd May, 2026 &nbsp;|&nbsp; 10:00 AM</p>
@@ -114,45 +87,31 @@
 
     <h2 class="special-day">Our special day!</h2>
 
-    <div class="divider divider--leaf" aria-hidden="true">
-      <svg viewBox="0 0 400 60" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="10" cy="30" r="4" fill="currentColor"/>
-        <circle cx="390" cy="30" r="4" fill="currentColor"/>
-        <circle cx="200" cy="30" r="4" fill="currentColor"/>
-        <line x1="14" y1="30" x2="120" y2="30" stroke="currentColor" stroke-width="1.5"/>
-        <line x1="280" y1="30" x2="386" y2="30" stroke="currentColor" stroke-width="1.5"/>
-        <line x1="168" y1="30" x2="196" y2="30" stroke="currentColor" stroke-width="1.5"/>
-        <line x1="204" y1="30" x2="232" y2="30" stroke="currentColor" stroke-width="1.5"/>
-        <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M120,30 Q140,30 168,30"/>
-          <path d="M125,30 Q130,38 140,42 Q135,34 132,30"/>
-          <path d="M128,30 Q133,22 143,18 Q138,26 135,30"/>
-          <path d="M140,30 Q144,36 152,39 Q148,33 145,30"/>
-          <path d="M142,30 Q146,24 154,21 Q150,27 148,30"/>
-          <path d="M152,30 Q155,34 161,36 Q158,32 156,30"/>
-          <path d="M154,30 Q157,26 163,24 Q160,28 158,30"/>
-          <path d="M162,30 Q165,33 168,30"/>
-          <path d="M162,30 Q165,27 168,30"/>
-        </g>
-        <g fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
-          <path d="M232,30 Q260,30 280,30"/>
-          <path d="M275,30 Q270,38 260,42 Q265,34 268,30"/>
-          <path d="M272,30 Q267,22 257,18 Q262,26 265,30"/>
-          <path d="M260,30 Q256,36 248,39 Q252,33 255,30"/>
-          <path d="M258,30 Q254,24 246,21 Q250,27 252,30"/>
-          <path d="M248,30 Q245,34 239,36 Q242,32 244,30"/>
-          <path d="M246,30 Q243,26 237,24 Q240,28 242,30"/>
-          <path d="M238,30 Q235,33 232,30"/>
-          <path d="M238,30 Q235,27 232,30"/>
-        </g>
-      </svg>
-    </div>
+    <hr class="families__divider" />
+
 
     <div class="details__row">
 
       <div class="detail-block">
         <p class="detail-label">DATE:</p>
-        <p class="detail-value">3rd May, 2026 | 10:00 AM</p>
+        <p class="detail-value">3rd May, 2026</p>
+        <ul class="schedule">
+          <li class="schedule__item">
+            <span class="schedule__time">10:00 AM</span>
+            <span class="schedule__dot"></span>
+            <span class="schedule__event">Ganesh Pujan</span>
+          </li>
+          <li class="schedule__item">
+            <span class="schedule__time">11:00 AM</span>
+            <span class="schedule__dot"></span>
+            <span class="schedule__event">Ring Exchange</span>
+          </li>
+          <li class="schedule__item">
+            <span class="schedule__time">12:30 PM</span>
+            <span class="schedule__dot"></span>
+            <span class="schedule__event">Lunch</span>
+          </li>
+        </ul>
       </div>
 
       <div class="detail-block">
@@ -164,6 +123,35 @@
           Thane – 401107
         </p>
         <p class="detail-value valet">(VALET PARKING AVAILABLE)</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════ FAMILIES SECTION ═══════════════════════════════ -->
+  <section class="families">
+    <h2 class="families__heading">Two Families, One Bond</h2>
+
+    <hr class="families__divider" />
+
+    <div class="families__row">
+
+      <div class="family-card">
+        <div class="family-card__role">Groom</div>
+        <div class="family-card__name">Jeet</div>
+        <div class="family-card__parents">Son of</div>
+        <div class="family-card__parent-names">Ajaybhai Doshi & Ilaben Doshi</div>
+      </div>
+
+      <div class="families__sep" aria-hidden="true">
+        <img src="assets/rings.png" alt="" class="families__rings" />
+      </div>
+
+      <div class="family-card">
+        <div class="family-card__role">Bride</div>
+        <div class="family-card__name">Neha</div>
+        <div class="family-card__parents">Daughter of</div>
+        <div class="family-card__parent-names">Devendra Manohar Desai & Madhavi Desai</div>
       </div>
 
     </div>

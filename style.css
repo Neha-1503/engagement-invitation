@@ -32,15 +32,23 @@ img { display: block; max-width: 100%; }
 }
 .divider svg { width: 100%; height: auto; }
 .divider--leaf {
-  width: 360px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   color: #b0b0b0;
+  justify-content: center;
+}
+
+.divider img {
+   width: 20% !important;
 }
 
 /* ═══════════════════════════════════════════════════════════════
    HERO SECTION
 ══════════════════════════════════════════════════════════════ */
 .hero-bg {
-  background-color: #fff;
+  background-color: red;
 }
 
 .hero {
@@ -125,6 +133,8 @@ img { display: block; max-width: 100%; }
   color: #2c2c2c;
   margin: 12px 0 28px;
   white-space: nowrap;
+  display: flex;
+    justify-content: center;
 }
 
 /* Venue button */
@@ -140,7 +150,8 @@ img { display: block; max-width: 100%; }
   letter-spacing: 0.18em;
   text-transform: uppercase;
   margin-top: 20px;
-  color: #8fa98c;
+  color: white;
+  background-color: #8fa98c;
   text-decoration: none;
   transition: background 0.2s, color 0.2s;
 }
@@ -168,15 +179,16 @@ img { display: block; max-width: 100%; }
 /* Swan icon */
 .swans {
   width: 150px;
-  margin: 0 auto 24px;
+  margin: 0 auto 4px;
 }
 
 /* Timer row */
 .countdown__timer {
+  font-family: 'Playfair Display', serif;
   display: flex;
-  align-items: flex-end;
+  align-items: center;
   justify-content: center;
-  gap: 30px;
+  gap: 10px;
   position: relative;
   z-index: 3;
 }
@@ -201,12 +213,12 @@ img { display: block; max-width: 100%; }
   font-size: clamp(0.9rem, 3vw, 1.4rem);
   font-weight: 300;
   color: rgba(255,255,255,0.9);
-  margin-top: 4px;
+  margin-top: 12px;
   letter-spacing: 0.05em;
 }
 
 .countdown__sep {
-  font-family: 'Lato', sans-serif;
+  font-family: 'Playfair Display', serif;
   font-size: clamp(2.5rem, 10vw, 5.5rem);
   font-weight: 300;
   color: rgba(255,255,255,0.7);
@@ -313,6 +325,68 @@ img { display: block; max-width: 100%; }
   color: #2c2c2c;
 }
 
+/* Schedule timeline */
+.schedule {
+  list-style: none;
+  padding: 0;
+  margin: 16px 0 0;
+  position: relative;
+}
+
+.schedule::before {
+  content: '';
+  position: absolute;
+  left: 88px;
+  top: 8px;
+  bottom: 8px;
+  width: 1px;
+  background: linear-gradient(to bottom, #c9a8d4, #e8c9b0);
+}
+
+.schedule__item {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.schedule__item:last-child {
+  margin-bottom: 0;
+}
+
+.schedule__time {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  color: #7b5ea7;
+  width: 80px;
+  flex-shrink: 0;
+  text-align: right;
+  white-space: nowrap;
+}
+
+.schedule__dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #b98ab8;
+  flex-shrink: 0;
+  margin: 0 14px;
+  position: relative;
+  z-index: 1;
+}
+
+.schedule__event {
+  font-family: 'Lato', sans-serif;
+  font-size: clamp(0.95rem, 2.5vw, 1.08rem);
+  font-weight: 400;
+  color: #2c2c2c;
+  line-height: 1.4;
+}
+
 /* Detail blocks inside row */
 .details__row .detail-block {
   flex: 1;
@@ -392,12 +466,110 @@ img { display: block; max-width: 100%; }
 }
 
 /* ═══════════════════════════════════════════════════════════════
+   FAMILIES SECTION
+══════════════════════════════════════════════════════════════ */
+.families {
+  background: #fdf8f5;
+  text-align: center;
+  padding: 64px 24px 56px;
+}
+
+.families__heading {
+  font-family: 'Great Vibes', cursive;
+  font-size: clamp(2.2rem, 7vw, 3.4rem);
+  font-weight: 400;
+  color: #887180;
+  margin-bottom: 4px;
+}
+
+.families__divider {
+  border: none;
+  border-top: 1px solid #c9b8c0;
+  width: 80px;
+  margin: 16px auto 0;
+}
+
+.families__row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  max-width: 860px;
+  margin: 32px auto 0;
+  flex-wrap: wrap;
+}
+
+.family-card {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-width: 200px;
+  max-width: 280px;
+}
+
+.family-card__role {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #8fa98c;
+  margin-bottom: 8px;
+}
+
+.family-card__name {
+  font-family: 'Ephesis', cursive;
+  font-size: clamp(3rem, 9vw, 4.5rem);
+  color: #887180;
+  line-height: 1.1;
+  margin-bottom: 10px;
+}
+
+.family-card__parents {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.82rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  color: #606060;
+  margin-bottom: 4px;
+}
+
+.family-card__parent-names {
+  font-family: 'Noto Serif', serif;
+  font-size: clamp(0.95rem, 2.5vw, 1.1rem);
+  font-weight: 400;
+  color: #2c2c2c;
+  line-height: 1.8;
+}
+
+.families__sep {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.families__rings {
+  width: 64px;
+  opacity: 0.75;
+}
+
+@media (max-width: 600px) {
+  .families__row {
+    flex-direction: column;
+    gap: 32px;
+  }
+  .families__sep { transform: rotate(90deg); }
+  .family-card { max-width: 100%; }
+}
+
+/* ═══════════════════════════════════════════════════════════════
    GAMES CTA
 ══════════════════════════════════════════════════════════════ */
 .games-cta {
   text-align: center;
   padding: 56px 24px;
-  background: #f8f5f2;
+  background: #eef3ec;
 }
 
 .games-cta__text {

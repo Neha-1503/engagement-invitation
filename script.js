@@ -1,3 +1,23 @@
+// ─── Autoplay audio ───────────────────────────────────────────
+const audio = document.getElementById('bg-audio');
+audio.volume = 1;
+
+function startAudio() {
+  audio.play().catch(() => {});
+  document.removeEventListener('click', startAudio);
+  document.removeEventListener('touchstart', startAudio);
+  document.removeEventListener('keydown', startAudio);
+  document.removeEventListener('scroll', startAudio);
+}
+
+// Try immediately, fall back to first interaction
+audio.play().catch(() => {
+  document.addEventListener('click', startAudio);
+  document.addEventListener('touchstart', startAudio);
+  document.addEventListener('keydown', startAudio);
+  document.addEventListener('scroll', startAudio);
+});
+
 // Target: 3rd May 2026, 10:00 AM IST (UTC+5:30)
 const TARGET = new Date('2026-05-03T10:00:00+05:30');
 
