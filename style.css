@@ -448,6 +448,59 @@ img { display: block; max-width: 100%; }
   .countdown__sep { padding-bottom: 22px; }
 }
 
+/* ─── Scroll Hint ───────────────────────────────────────────── */
+.scroll-hint {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  z-index: 10;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.72);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: 8px 16px 10px;
+  border-radius: 24px;
+}
+
+.scroll-hint.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.scroll-hint__label {
+  font-family: 'Lato', sans-serif;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #887180;
+}
+
+.scroll-hint__arrow {
+  width: 26px;
+  height: 26px;
+  color: #887180;
+  animation: scrollBounce 1.6s ease-in-out infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(6px); }
+}
+
+@media (max-width: 768px) {
+  .scroll-hint {
+    bottom: 24px;
+  }
+}
+
 /* ─── Petal Shower ──────────────────────────────────────────── */
 .petal {
   position: absolute;
@@ -618,7 +671,7 @@ img { display: block; max-width: 100%; }
 
 .footer p {
   font-family: 'Lato', sans-serif;
-  font-size: 0.85rem;
+  font-size: 16px;
   font-weight: 300;
   letter-spacing: 0.08em;
   color: rgba(255, 255, 255, 0.9);

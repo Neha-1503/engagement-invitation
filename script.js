@@ -54,6 +54,21 @@ function tick() {
 tick();
 setInterval(tick, 1000);
 
+// ─── Scroll Hint ─────────────────────────────────────────────
+const scrollHint = document.getElementById('scroll-hint');
+if (scrollHint) {
+  const hideHint = () => {
+    if (window.scrollY > 40) {
+      scrollHint.classList.add('hidden');
+      window.removeEventListener('scroll', hideHint);
+    }
+  };
+  window.addEventListener('scroll', hideHint, { passive: true });
+  scrollHint.addEventListener('click', () => {
+    window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+  });
+}
+
 // ─── Petal Shower ────────────────────────────────────────────
 const PETAL_COLORS = ['#a8c5a0', '#8fa98c', '#c8dfc4', '#6b9e6b', '#b8d4b4', '#AFBFCB', '#897180'];
 
